@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #fff6ee;
+  --color-ivory: #fffdfb;
+  --color-blush: #fbdce6;
+  --color-rose: #e58ba6;
+  --color-rose-soft: #f4c2d3;
+  --color-rose-deep: #b14a6e;
+  --color-burgundy: #7a1f3d;
+  --color-burgundy-deep: #5c1730;
+  --color-gold: #d4af37;
+  --color-gold-light: #f0d89a;
+  --color-gold-warm: #e3b673;
+  --color-ink: #5c2a3d;
+  --color-noir: #3d1428;
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-ivory: var(--color-ivory);
+  --color-blush: var(--color-blush);
+  --color-rose: var(--color-rose);
+  --color-rose-soft: var(--color-rose-soft);
+  --color-rose-deep: var(--color-rose-deep);
+  --color-burgundy: var(--color-burgundy);
+  --color-burgundy-deep: var(--color-burgundy-deep);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-gold-warm: var(--color-gold-warm);
+  --color-ink: var(--color-ink);
+  --color-noir: var(--color-noir);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-color: var(--color-rose) var(--color-blush);
+}
+
+body {
+  background: radial-gradient(
+      ellipse 85% 55% at 15% -5%,
+      rgba(251, 220, 230, 0.9),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 90% 8%,
+      rgba(240, 216, 154, 0.55),
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse 80% 60% at 85% 55%,
+      rgba(229, 139, 166, 0.28),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 75% 55% at 8% 60%,
+      rgba(122, 31, 61, 0.1),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 90% 60% at 50% 100%,
+      rgba(251, 220, 230, 0.85),
+      transparent 65%
+    ),
+    var(--color-cream);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-rose);
+  color: var(--color-ivory);
+}
+
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 240, 246, 0.28)
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 45px -14px rgba(122, 31, 61, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(
+    120deg,
+    var(--color-rose-deep),
+    var(--color-gold) 35%,
+    var(--color-rose) 60%,
+    var(--color-burgundy) 80%,
+    var(--color-rose-deep)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 9s ease-in-out infinite;
+}
+
+.glow-gold {
+  box-shadow: 0 0 70px -14px rgba(212, 175, 55, 0.5),
+    0 0 100px -20px rgba(229, 139, 166, 0.4);
+}
+
+.glow-rose {
+  box-shadow: 0 0 60px -12px rgba(229, 139, 166, 0.55);
+}
+
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(177, 74, 110, 0.7),
+    rgba(212, 175, 55, 0.8),
+    transparent
+  );
+}
+
+@keyframes shine {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
