@@ -43,7 +43,3 @@ next-env.d.ts
 # local dev logs
 .dev-server.log
 
-# copyrighted background music — keep local only, do not distribute
-/public/audio/*.mp3
-/public/audio/*.wav
-/public/audio/*.ogg
